@@ -1,0 +1,32 @@
+GAMBIT
+
+$ cdd
+$ mkd gambit
+$ mkd app
+$ git clone https://github.com/jazzscheme/gambit devel
+$ cd devel
+$ ./configure 'CC=/opt/homebrew/bin/gcc-13' '--enable-single-host' '--enable-rtlib-debug-location' '--enable-rtlib-debug-environments' '--enable-track-scheme'
+$ make -j8
+$ sudo make install
+
+
+TOGETHER
+$ cdd
+$ mkd together
+$ mkd app
+$ git clone https://github.com/gcartier/together -b stable stable
+$ cd stable
+$ git clone https://github.com/gcartier/jiri -b stable
+$ git clone https://github.com/gcartier/update -b stable
+$ git clone https://github.com/gcartier/world -b stable
+$ git clone https://github.com/jazzscheme/gaea -b stable
+$ git clone https://github.com/jazzscheme/jazz -b stable
+$ cat > .jaz
+export JAZCONF=stable
+export JAZDEST=binaries/stable
+<ctrl-d>
+$ ./jaz make kernel (optional)
+$ ./jaz make jazz (optional)
+$ ./jaz make zlib
+$ ./jaz download
+$ ./jaz make
