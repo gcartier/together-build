@@ -34,7 +34,7 @@ $ git clone https://github.com/jazzscheme/gambit devel
 BUILD
 $ cd devel
 $ export MACOSX_DEPLOYMENT_TARGET=11
-$ ./configure 'CC=/usr/local/bin/gcc-13' '--enable-single-host' '--enable-rtlib-debug-location' '--enable-rtlib-debug-environments' '--enable-track-scheme'
+$ ./configure 'CC=/opt/homebrew/bin/gcc-13' '--enable-single-host' '--enable-rtlib-debug-location' '--enable-rtlib-debug-environments' '--enable-track-scheme'
 $ make -j8
 $ sudo make install
 
