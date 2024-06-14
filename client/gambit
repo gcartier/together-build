@@ -39,6 +39,10 @@ $ make -j8
 $ sudo make install
 
 
+TRACK
+$ ./configure 'CC=/opt/homebrew/bin/gcc-13' '--prefix=/usr/local/GambitTrack' '--enable-rtlib-debug-location' '--enable-rtlib-debug-environments' '--enable-track-scheme' '--enable-track-allocations'
+
+
 ;;;
 ;;;; WINDOWS
 ;;;
