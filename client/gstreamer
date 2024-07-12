@@ -135,7 +135,7 @@ to C:\gstreamer
 
 DISTRIBUTION
 $ cd c:\Home\gstreamer
-$ git clone  https://github.com/gcartier/gstreamer
+$ git clone https://github.com/gcartier/gstreamer
 $ cd gstreamer
 $ git checkout work
 *** MSVC ***
@@ -147,7 +147,7 @@ $ meson setup -Dprefix=c:/Home/gstreamer/gstreamer/distr -Dbuildtype=debugoptimi
     generates /MDs which requires a non-standard debug library
   - also note that it is mandatory for this setup to be done in the
     visual studio command prompt for meson to chose cl as the compiler
-$ ninja -C build
+$ ninja -C builddistr
 $ meson install -C builddistr
 
  
