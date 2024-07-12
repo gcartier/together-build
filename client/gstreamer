@@ -4,12 +4,12 @@
 
 
 ;;;
-;;;; MAC
+;;;; SILICON
 ;;;
 
 
-make sure to match gstreamer required version
-export MACOSX_DEPLOYMENT_TARGET=10.13
+make sure to at least match gstreamer required version
+export MACOSX_DEPLOYMENT_TARGET=11
 
 need to brew install pkgconfig and
 export PKG_CONFIG_PATH=/Library/Frameworks/GStreamer.framework/Versions/1.0/lib/pkgconfig
@@ -25,14 +25,17 @@ though it is not the glib that will end up being used
 
 
 DISTRIBUTION
+$ git clone https://github.com/gcartier/gstreamer
+$ cd gstreamer
+$ git checkout work
 $ meson setup -Dprefix=/Users/cartier/Devel/gstreamer/gstreamer/distr -Dbuildtype=debugoptimized builddistr
 $ ninja -C builddistr
 $ meson install -C builddistr
 
  
 JAZZ
-$ cd to together
-$ cd jazz/foreign/jazz.stream/mac
+- cd to together
+$ cd jazz/foreign/jazz.stream/silicon
 $ ./copy.sh
 $ ./install.sh
 $ ./patch.sh
@@ -58,12 +61,12 @@ $ jazz -c jazz.stream.foreign -f
 
 
 ;;;
-;;;; SILICON
+;;;; MAC
 ;;;
 
 
-make sure to at least match gstreamer required version
-export MACOSX_DEPLOYMENT_TARGET=11
+make sure to match gstreamer required version
+export MACOSX_DEPLOYMENT_TARGET=10.13
 
 need to brew install pkgconfig and
 export PKG_CONFIG_PATH=/Library/Frameworks/GStreamer.framework/Versions/1.0/lib/pkgconfig
@@ -79,14 +82,17 @@ though it is not the glib that will end up being used
 
 
 DISTRIBUTION
-$ meson setup -Dprefix=/Users/cartier/Devel/gstreamer/gstreamer-silicon/distr -Dbuildtype=debugoptimized builddistr
+$ git clone https://github.com/gcartier/gstreamer-x86
+$ cd gstreamer-x86
+$ git checkout work
+$ meson setup -Dprefix=/Users/cartier/Devel/gstreamer/gstreamer-x86/distr -Dbuildtype=debugoptimized builddistr
 $ ninja -C builddistr
 $ meson install -C builddistr
 
  
 JAZZ
-- cd to together
-$ cd jazz/foreign/jazz.stream/silicon
+$ cd to together
+$ cd jazz/foreign/jazz.stream/mac
 $ ./copy.sh
 $ ./install.sh
 $ ./patch.sh
