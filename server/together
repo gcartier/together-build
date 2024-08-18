@@ -76,8 +76,10 @@ $ sudo apt install unzip
 
 $ mkdir Devel
 $ cd Devel
-$ git clone https://github.com/gcartier/server-setup setup
-$ cd setup
+$ mkdir together
+$ cd together
+$ git clone https://github.com/gcartier/together-server server
+$ cd server
 $ cp home/.emacs ~
 $ cp home/.gitconfig ~
 $ cp home/.profilerc ~
@@ -95,7 +97,7 @@ $ make -j2
 $ sudo make install (.4G)
 
 $ cdd
-$ mkd together
+$ cd together
 $ mkd app
 $ git clone -b stable https://github.com/gcartier/together prod
 $ cd prod
