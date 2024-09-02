@@ -1,5 +1,5 @@
 ;;;
-;;;; CLIENT
+;;;; TOGETHER
 ;;;
 
 
@@ -18,15 +18,17 @@ $ git clone https://github.com/gcartier/world
 
 
 ;;;
-;;;; MAC
+;;;; SILICON
 ;;;
 
 
 BUILD
 $ cat > .jaz
-export GAMBITDIR=/usr/local/Gambit_x86
+unset GAMBITDIR
 export JAZCONF=prod
 export JAZDEST=binaries/prod
+export JAZZ_APPLE_DEVELOPER_ID="R74FF3EJWG"
+export JAZZ_APPLE_ENTITLEMENTS="/Users/cartier/Devel/together/notary/Entitlements.plist"
 <ctrl-d>
 $ ./jaz make kernel (optional)
 $ ./jaz make jazz (optional)
@@ -37,6 +39,48 @@ $ ./jaz make
 
 DEPLOY
 $ ./deploy
+
+
+DMG
+$ ./prepare
+$ ./sign
+$ ./notarize
+$ ./staple
+$ ./package
+$ ./publish
+
+
+;;;
+;;;; MAC
+;;;
+
+
+BUILD
+$ cat > .jaz
+export GAMBITDIR=/usr/local/Gambit-x86
+export JAZCONF=prod
+export JAZDEST=binaries/prod
+export JAZZ_APPLE_DEVELOPER_ID="R74FF3EJWG"
+export JAZZ_APPLE_ENTITLEMENTS="/Users/cartier/Devel/together/notary/Entitlements.plist"
+<ctrl-d>
+$ ./jaz make kernel (optional)
+$ ./jaz make jazz (optional)
+$ ./jaz make zlib
+$ ./jaz download
+$ ./jaz make
+
+
+DEPLOY
+$ ./deploy
+
+
+DMG
+$ ./prepare
+$ ./sign
+$ ./notarize
+$ ./staple
+$ ./package
+$ ./publish
 
 
 ;;;

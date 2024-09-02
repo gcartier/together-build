@@ -1,5 +1,5 @@
 ;;;
-;;;; CLIENT
+;;;; SIRIUS
 ;;;
 
 
@@ -24,8 +24,8 @@ $ git clone https://github.com/gcartier/jiri
 BUILD
 $ cat > .jaz
 export JAZCONF=prod
-export JAZZ_APPLE_DEVELOPER_ID="R74FF3EJWG"
-export JAZZ_APPLE_ENTITLEMENTS="/Users/cartier/Devel/together/notary/Entitlements.plist"
+unset JAZZ_APPLE_DEVELOPER_ID
+unset JAZZ_APPLE_ENTITLEMENTS
 <ctrl-d>
 $ ./jaz make zlib
 $ ./jaz download
@@ -36,11 +36,3 @@ $ ./jaz make
 
 DEPLOY
 $ ./deploy
-
-
-NOTARIZE
-$ ./notarize
-
-
-PACKAGE
-$ ./package
